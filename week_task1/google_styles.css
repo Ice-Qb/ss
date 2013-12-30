@@ -1,0 +1,55 @@
+body {
+      font-family: sans-serif;
+    }
+
+    #header {
+      background-color:#f1f1f1;
+height: 80px;
+    }
+
+    #google {
+      padding-left: 20px;
+      float: left;
+    }
+    
+#search {
+  padding-top: 25px;
+}
+#extented_search {
+  padding-left: 325px;
+}
+#left_menu {
+  width: 215px;
+  padding-left:35px;
+  float: left;
+  height: 1000px;
+}
+.menu_part {
+  
+}
+#search_group {
+  margin-left: 250px;
+  font-size: 10pt;
+}
+#menu_part2 {
+  color: grey;
+  font-family: sans-serif;
+}
+.menu_headers {
+  color: tomato;
+  font-size: 12pt;
+  font-weight: bold;
+}
+.block {
+  padding: 10px;
+  width: 1000px;
+}
+.main_headers {
+  font-size: 14pt;
+}
+.sky_blue {
+  color: dodgerBlue;
+}
+.green {
+  color: green;
+}
