@@ -18,6 +18,6 @@ def fib_range(n, m)
   end
 end
 
-fib_range(5, 100)
-# fib(10)
-# puts fib_rec(8)
+# fib_range(5, 100)
+fib(6)
+# puts fib_rec(10)

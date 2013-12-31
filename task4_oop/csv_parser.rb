@@ -4,7 +4,7 @@ end
 
 class Person < Object
   @@surname = ""
-
+  
   def id
     @@id		
   end
@@ -68,6 +68,28 @@ class Student < Person
   def show
   	puts "#{@@id}\t#{@@name}\t\t#{@@surname}\t\t#{@project}"	
   end
+
+  def find_by_id(id)
+    file  = File.new('students.csv', 'r')
+    file.each_line("\n") do |row|
+      info = row.split(", ")
+      if info[0].to_i == id
+        @@id      = info[0].to_i
+        @@name    = info[1]
+        @@surname = info[2]
+        @project  = info[3]
+        return self
+      end
+    end 
+  end
+
+  def show_all
+    file = File.new('students.csv', 'r')
+    file.each_line("\n") do |row|
+      student = Student.new(row.split(", "))
+      student.show
+    end   
+  end 
 end
 
 class Project < Object
@@ -81,6 +103,27 @@ class Project < Object
 	
   def show
    	puts "#{@@id}\t#{@@name}\t\t#{@@description}"	
+  end 
+
+  def find_by_id(id)
+    file  = File.new('projects.csv', 'r')
+    file.each_line("\n") do |row|
+      info = row.split(", ")
+      if info[0].to_i == id
+        @@id = info[0].to_i
+        @@name = info[1]
+        @description = info[2]
+        return self
+      end
+    end 
+  end
+
+  def show_all
+    file = File.new('projects.csv', 'r')
+    file.each_line("\n") do |row|
+      project = Project.new(row.split(", "))
+      project.show
+    end   
   end 	
 end
 

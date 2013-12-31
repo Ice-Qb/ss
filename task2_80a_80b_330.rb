@@ -23,10 +23,10 @@ class Integer
       n /= 10
     end while n > 0  
     a.reverse.each { |k| print k, ' ' }
-    puts " and has #{a.length} digits"
+    puts "and has #{a.length} digits"
     puts "sum is #{a.inject(:+)}"
   end
 end
 
-2535.perfect
+# 2535.perfect
 # 3534535.digits_count
