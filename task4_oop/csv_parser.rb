@@ -1,49 +1,25 @@
-class Object
-  @@id, @@name = 0, ""
-end
-
-class Person < Object
-  @@surname = ""
-  
-  def id
-    @@id		
-  end
-
-  def name
-  	@@name	
-  end
-
-  def surname
-    @@surname		
-  end
-end
-
-class Teacher < Person
-  attr_reader :discipline
+class Teacher
+  attr_reader :id, :name, :surname, :discipline
 
   def initialize(info = [])
-    @@id = info[0].to_i
-    @@name = info[1]
-    @@surname = info[2]
-    @discipline = info[3]
+    @id, @name, @surname, @discipline = info
+    @id = @id.to_i
   end
 
   def show
-  	puts "#{@@id}\t#{@@name}\t\t#{@@surname}\t\t#{@discipline}"	
+    puts "#{@id}\t#{@name}\t\t#{@surname}\t\t#{@discipline}"  
   end
 
   def find_by_id(id)
-  	file  = File.new('teachers.csv', 'r')
+    file  = File.new('teachers.csv', 'r')
     file.each_line("\n") do |row|
       info = row.split(", ")
       if info[0].to_i == id
-        @@id = info[0].to_i
-        @@name = info[1]
-        @@surname = info[2]
-        @discipline = info[3]
+        @id, @name, @surname, @discipline = info
+        @id = @id.to_i
         return self
       end
-    end	
+    end 
   end
 
   def show_all
@@ -51,22 +27,20 @@ class Teacher < Person
     file.each_line("\n") do |row|
       teacher = Teacher.new(row.split(", "))
       teacher.show
-    end		
-  end	
+    end   
+  end 
 end
 
-class Student < Person
-  attr_reader :project
+class Student
+  attr_reader :id, :name, :surname, :project
 
   def initialize(info = [])
-    @@id      = info[0].to_i
-    @@name    = info[1]
-    @@surname = info[2]
-    @project  = info[3]
+    @id, @name, @surname, @project = info
+    @id = @id.to_i
   end
 
   def show
-  	puts "#{@@id}\t#{@@name}\t\t#{@@surname}\t\t#{@project}"	
+    puts "#{@id}\t#{@name}\t\t#{@surname}\t\t#{@project}" 
   end
 
   def find_by_id(id)
@@ -74,10 +48,8 @@ class Student < Person
     file.each_line("\n") do |row|
       info = row.split(", ")
       if info[0].to_i == id
-        @@id      = info[0].to_i
-        @@name    = info[1]
-        @@surname = info[2]
-        @project  = info[3]
+        @id, @name, @surname, @project = info
+        @id = @id.to_i
         return self
       end
     end 
@@ -92,17 +64,16 @@ class Student < Person
   end 
 end
 
-class Project < Object
-  attr_reader :description
+class Project
+  attr_reader :id, :name, :description
 
   def initialize(info = [])
-    @@id         = info[0].to_i
-    @@name       = info[1]
-    @description = info[2]
+    @id, @name, @description = info
+    @id = @id.to_i
   end
-	
+  
   def show
-   	puts "#{@@id}\t#{@@name}\t\t#{@@description}"	
+    puts "#{@id}\t#{@name}\t\t#{@description}"  
   end 
 
   def find_by_id(id)
@@ -110,9 +81,8 @@ class Project < Object
     file.each_line("\n") do |row|
       info = row.split(", ")
       if info[0].to_i == id
-        @@id = info[0].to_i
-        @@name = info[1]
-        @description = info[2]
+        @id, @name, @description = info
+        @id = @id.to_i
         return self
       end
     end 
@@ -124,7 +94,7 @@ class Project < Object
       project = Project.new(row.split(", "))
       project.show
     end   
-  end 	
+  end   
 end
 
 teacher = Teacher.new

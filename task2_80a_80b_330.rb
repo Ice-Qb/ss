@@ -19,7 +19,7 @@ class Integer
     a, n = [], self
     print "#{n} consists of "
     begin
-  	  a << n % 10
+      a << n % 10
       n /= 10
     end while n > 0  
     a.reverse.each { |k| print k, ' ' }

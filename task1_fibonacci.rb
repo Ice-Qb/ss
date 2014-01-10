@@ -1,8 +1,8 @@
 def fib(n)
   a, b = 1, 1
   n.times do
-  	a, b = b, a + b
-  	puts a
+    a, b = b, a + b
+    puts a
   end 
 end
 
@@ -13,8 +13,8 @@ end
 def fib_range(n, m)
   a, b, i = 1, 1, 1
   while x = fib_rec(i) <= m ? fib_rec(i) : false
-  	puts x if x >= n
-  	i += 1
+    puts x if x >= n
+    i += 1
   end
 end
 
